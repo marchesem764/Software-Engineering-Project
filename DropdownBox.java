@@ -9,7 +9,7 @@ public class DropdownBox extends JFrame {
 
     private static final String ROUTE_DATA_FILE      = "route.csv";
     private static final String GOOGLE_MAPS_BASE_URL = "https://maps.googleapis.com/maps/api/staticmap";
-    private static final String GOOGLE_MAPS_API_KEY  = "AIzaSyDvpiFb50H3DXRr8-4LphlpfEzlVBIDXo8";
+    private static String GOOGLE_MAPS_API_KEY        = null;
     private static final int    DEFAULT_ZOOM         = 13;
     private static final int    WIDTH                = 800;
     private static final int    HEIGHT               = 600;
@@ -18,9 +18,11 @@ public class DropdownBox extends JFrame {
     private int     zoom;      // the zoom level for the map
     private JLabel  labelMap;  // the map as a label
 
-    public DropdownBox() throws MalformedURLException {
+    public DropdownBox(String key) throws MalformedURLException {
 
         //TODO: Condense into one panel
+
+        GOOGLE_MAPS_API_KEY = key;
 
         setTitle(TITLE);
         setSize(WIDTH, HEIGHT);
